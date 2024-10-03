@@ -1,0 +1,94 @@
+/* src/components/Presentation.css */
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+  position: relative;
+  overflow: hidden; /* Prevent scrollbars if necessary */
+}
+
+.slide {
+  width: 100%; /* 80% of the viewport width */
+  height: 100vh; /* 80% of the viewport height */
+  background-color: #333; /* Slightly lighter background for the slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Add some shadow for depth */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Full width of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Prevent interactions when hidden */
+}
+
+.controls.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Allow interactions when visible */
+}
+
+.presentation button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.presentation button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+.presentation button {
+  padding: 10px; /* Adjust if needed */
+  background-color: #5f5f5f;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.presentation button:hover {
+  background-color: #0056b3;
+}
+
+svg {
+  fill: #ffffff;
+}

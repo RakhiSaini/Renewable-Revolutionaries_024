@@ -1,0 +1,91 @@
+/* src/components/PresentationViewer.css */
+
+.presentation-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 1001;
+  }
+  
+  .slide-container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid #ddd;
+    position: relative;
+    margin-top: 50px; /* Adjust for fixed header */
+  }
+  
+  .slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .text-element {
+    position: absolute;
+    overflow: hidden;
+    resize: both;
+    word-wrap: break-word;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  
+  button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .close-button {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .prev-slide {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .next-slide {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  
