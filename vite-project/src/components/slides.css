@@ -1,0 +1,35 @@
+/* src/components/Slides.css */
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #6f6f6f; /* Dark background for slide */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    width: 100%;
+    height: 90vh;
+    color: #ffffff; /* Light text */
+}
+
+.slide-image {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.slide-title {
+    font-size: 2em;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.slide-text {
+    font-size: 1.2em;
+    color: #cccccc;
+    margin: 10px 0;
+}

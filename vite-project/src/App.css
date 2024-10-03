@@ -1,0 +1,226 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* font-weight: 90; */
+  }
+  
+  .container{
+    max-width: 1250px;
+    margin: auto;
+    padding: 40px ;
+  }
+  .containerpp{
+    max-width: 1640px;
+    margin: auto;
+  }
+  
+  #sec1{
+    margin: 50px 0px;
+  }
+  #sec2{margin: 50px 0px;}
+  #sec4{margin: 50px 0px;}
+  #sec3{margin: 50px 0px;}
+  
+  button{
+    background-color: rgb(60, 171, 214);
+    padding: 15px 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+  }
+  .bluehiglight{
+    color: rgb(60, 171, 214)
+  }
+  
+  #sec1>div:nth-of-type(1){
+    display: flex;
+    padding: 40px 0px;
+  }
+  #sec1 .container>p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  #sec1>div:nth-of-type(1)>div:nth-of-type(1){
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+  #sec1>div:nth-of-type(1) p{
+    font-size: 35px;
+    font-weight: 700;
+  }
+  #sec1>div:nth-of-type(1) img{
+    max-width: 90%;
+  }
+  #sec1>div:nth-of-type(2) img{
+    margin-right: 10px;
+  }
+  #sec1>div:nth-of-type(2){
+    padding: 10px;
+    display: flex;
+    color: rgb(133, 133, 133);
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 18px;
+    font-weight: 80;
+  }
+  #sec2{
+    display: flex;
+  }
+  #sec2>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    gap: 10px;
+  }
+  #sec2 p:nth-of-type(1){
+    font-size: 35px;
+    font-weight: 600;
+  }
+  #sec2 p:nth-of-type(2){
+    font-size: 18px;
+  }
+  
+  #sec3>div>div:nth-of-type(2) img{
+    max-width: 600px
+  }
+  #sec3>div:nth-of-type(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #sec3>div:nth-of-type(1)>div:nth-of-type(1){
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #sec3>div:nth-of-type(1) p:nth-of-type(1){
+    font-size: 24px;
+  }
+  #sec3>div:nth-of-type(1) p:nth-of-type(2){
+    font-size: 35px;
+    font-weight: 700;
+  }
+  #sec3>div:nth-of-type(1) p:nth-of-type(3){
+    font-size: 18px;
+  }
+  #sec3>div:nth-of-type(1) p:nth-of-type(4){
+    font-size: 16px;
+    font-weight: 70;
+  }
+  #sec3>div:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+  
+  }
+  #sec3>div:nth-of-type(2)>div:nth-of-type(2){
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 100;
+    gap: 50px;
+  
+  }
+  #sec3{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  
+  }
+  #sec32img{
+    max-width: 100%;
+  }
+  #sec3part{
+    background-color: hsl(208, 68%, 96%);
+  }
+  #sec4>div p:nth-of-type(1){
+    font-size: 35px;
+    font-weight: 700;
+  }
+  #sec4>div p:nth-of-type(2){
+    font-size: 20px;
+    color: gray;
+  }
+  #sec4>div button{
+    padding: 15px 100px;
+  }
+  #sec4{
+    background-image: url(../src/assets/home-pre-footer-clouds.webp);
+    background-size: cover; 
+    background-position: center;
+  }
+  #sec4>div{
+    background-image: url(../src/assets/home-pre-footer-Confettu.webp);
+    background-size: cover; 
+    background-position: center;
+    padding: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  #footerpp{
+    background-color: hsl(208, 68%, 96%);
+  }
+  footer{
+    padding: 50px 20px 10px 20px;
+    color: gray;
+    font-size: 14px;
+    
+  }
+  footer>div:nth-of-type(1){
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  footer>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(3){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  footer>div:nth-of-type(1)>div:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) img{
+    max-width: 200px;
+    
+  }
+  footer>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(3) img{
+    max-width: 80px;
+    
+  }
+  footer>div:nth-of-type(1)>div:nth-of-type(6) img{
+    max-width: 300px;
+  }
+  footer>div:nth-of-type(1)>div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  
+  footer>div:nth-of-type(2){
+    display: flex;
+    justify-content: space-between;
+  
+  }

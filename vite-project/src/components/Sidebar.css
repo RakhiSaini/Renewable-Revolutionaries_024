@@ -1,0 +1,98 @@
+/* General styles for sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+h3, h4, h5 {
+  color: #333;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.shapes-toggle {
+  display: block;
+  margin-top: 10px;
+}
+
+.shapes-menu {
+  margin-top: 10px;
+}
+
+.shape-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.shape-button {
+  width: 50px;
+  height: 50px;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shape-name {
+  margin-left: 10px;
+}
+
+.color-picker {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.font-select,
+.filter-select {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.font-size-input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.size-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.size-value {
+  margin-left: 10px;
+}
+
+.alignment-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.resize-controls {
+  margin-top: 20px;
+}

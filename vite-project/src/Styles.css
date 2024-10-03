@@ -1,0 +1,127 @@
+/* Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Color Scheme */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6C757D;
+    --accent-color: #28A745;
+    --background-color: #F8F9FA;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: scale(1.05);
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    flex: 1;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .col {
+        flex-basis: 100%;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Backgrounds and Imagery */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-image.jpg') center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Forms and Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
