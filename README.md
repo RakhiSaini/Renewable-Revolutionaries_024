@@ -60,7 +60,7 @@ Database: Firebase
 2. Navigate to the project directory:
 
     ```bash
-    cd slide-master
+    cd preset-flow
     ```
 
 3. Install dependencies using Vite:
