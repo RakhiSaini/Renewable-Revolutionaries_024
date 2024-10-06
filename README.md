@@ -1,9 +1,9 @@
 # Renewable-Revolutionaries_024
 # Project Title
-    Slide Master
+    Present-flow
 
 ## Introduction
-Slide Master is a powerful web application designed for creating and managing presentations effortlessly. It enables users to craft professional slides by adding and editing text, images, and various shapes. The application offers preset templates for quick and easy slide design, making it accessible for both beginners and experienced users. With interactive features like draggable and resizable elements, users can fully customize their presentations. The dark theme and intuitive control panel ensure a seamless and visually appealing user experience.
+ Present-flow is a powerful web application designed for creating and managing presentations effortlessly. It enables users to craft professional slides by adding and editing text, images, and various shapes. The application offers preset templates for quick and easy slide design, making it accessible for both beginners and experienced users. With interactive features like draggable and resizable elements, users can fully customize their presentations. The dark theme and intuitive control panel ensure a seamless and visually appealing user experience.
 
 ## Project Type
 Frontend 
@@ -12,7 +12,7 @@ Frontend
 Presentation : https://youtu.be/i1GKEhJOeZk
 
 ## Deplolyed App
-Frontend: https://hack-hurdles-036.vercel.app/ </br>
+Frontend: https://slide-omega.vercel.app/ </br>
 Database: Firebase
 
 
