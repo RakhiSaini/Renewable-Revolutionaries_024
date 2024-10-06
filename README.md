@@ -80,7 +80,8 @@ Database: Firebase
 1. Open the application in your browser.
 
 
-![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(132).png)
+![SignUp screenshoot] ![signup](https://github.com/user-attachments/assets/b836106d-58d1-4396-b2ff-fee7f7e5a087)
+
 
 ![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(133).png)
 
