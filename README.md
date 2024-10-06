@@ -3,10 +3,10 @@
     Present-flow
 
 ## Introduction
- Present-flow is a powerful web application designed for creating and managing presentations effortlessly. It enables users to craft professional slides by adding and editing text, images, and various shapes. The application offers preset templates for quick and easy slide design, making it accessible for both beginners and experienced users. With interactive features like draggable and resizable elements, users can fully customize their presentations. The dark theme and intuitive control panel ensure a seamless and visually appealing user experience.
+ PresentFlow is an intuitive web application tailored for designing and organizing presentations with ease. It empowers users to create polished slides by incorporating text, images, and a variety of shapes. With built-in templates, users can jumpstart their slide designs, making it user-friendly for novices while still offering depth for seasoned users. The app includes dynamic elements that can be dragged and resized, enabling complete customization of each presentation. Featuring a sleek dark theme and a user-friendly control panel, PresentFlow ensures a smooth, visually appealing experience throughout the slide creation process.
 
 ## Project Type
-Frontend 
+Frontend & Backend
 
 ## Video Walkthrough of the project
 Presentation : https://youtu.be/i1GKEhJOeZk
@@ -17,7 +17,7 @@ Database: Firebase
 
 
 ## Directory Structure
-<pre>Hack-Hurdles_036/
+<pre>Renewable-Revolutionaries_024/
  ├── vite-project/
      ├── public/
      ├── src/
@@ -54,7 +54,7 @@ Database: Firebase
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/slide-master.git
+    git clone https://github.com/RakhiSaini/Renewable-Revolutionaries_024
     ```
 
 2. Navigate to the project directory:
