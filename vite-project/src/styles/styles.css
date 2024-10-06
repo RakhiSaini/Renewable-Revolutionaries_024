@@ -1,84 +1,72 @@
-body
-{
+body {
     font-family: sans-serif;
     padding: 0;
     margin: 0;
+    background-color: #1e1e1e; /* Slightly lighter dark background */
+    color: #d3d3d3; /* Light gray text for readability */
 }
-.rs>.container1
-{
+
+.rs>.container1 {
     display: flex;
     padding: 20px 100px;
-   align-items: center;
-}
-.rs span
-{
-    color: rgb(60, 172, 213);
+    align-items: center;
 }
 
-.rs>h1
-{
-    text-align: center;
-    margin-top: 80px;
+.rs span {
+    color: rgb(135, 206, 235); /* Softer light blue for dark theme */
 }
-.loginpage
-{
-    margin-top: 80px;
-  
-}
-.signuppage
-{
-    margin-top: 80px;
-  
-}
-.homepage
-{
-    margin-top: 80px;
-    
-}
-.rs>p
-{
-width: 70%;
-margin: auto;
 
+.rs>h1 {
+    text-align: center;
+    margin-top: 80px;
+    color: #f1f1f1; /* Slightly off-white heading */
 }
-.rs>.headp
-{
+
+.loginpage, .signuppage, .homepage {
+    margin-top: 80px;
+}
+
+.rs>p {
+    width: 70%;
+    margin: auto;
+    color: #b0b0b0; /* Lighter gray for paragraphs */
+}
+
+.rs>.headp {
     text-align: center;
 }
-.rs button
-{
-    padding:10px 20px;
-    background-color:rgb(60, 172, 213) ;
-    color: white;
+
+.rs button {
+    padding: 10px 20px;
+    background-color: rgb(70, 126, 116);
+; /* Softer blue button */
+    color: #1e1e1e; /* Dark text for contrast */
     border: none;
     border-radius: 10px;
-    
 }
-.rs button:hover
-{
-  opacity: 80%;
-  cursor: pointer;
+
+.rs button:hover {
+    opacity: 80%;
+    cursor: pointer;
 }
-.rs nav
-{
+
+.rs nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: #2b2b2b; /* Slightly lighter dark navbar */
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
-
-    
+    color: #d3d3d3;
 }
-nav>img
-{
+
+nav>img {
     width: 160px;
 }
 
-.rs nav div
-{
-display: flex;
-gap: 5px;
+.rs nav div {
+    display: flex;
+    gap: 5px;
 }
