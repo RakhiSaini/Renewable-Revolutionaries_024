@@ -4,16 +4,17 @@
   display: flex;
   height: 100vh;
   width: 100vw;
-  /* overflow: hidden; */
   margin-top: 70px;
+  background-color: #2d2d2d; /* Dark background */
 }
 
 .sidebar {
   width: 250px;
-  background-color: #f5f5f5;
-  border-right: 1px solid #ddd;
+  background-color: #3a3a3a; /* Dark sidebar */
+  border-right: 1px solid #444; /* Darker border */
   display: flex;
   flex-direction: column;
+  color: #eaeaea; /* Light text */
 }
 
 .main-content {
@@ -21,20 +22,23 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #fff;
+  background-color: #1f1f1f; /* Darker main content */
+  color: #f0f0f0; /* Light text for contrast */
   position: relative;
 }
 
 .toolbar-container {
   padding: 10px;
-  background: #f0f0f0;
-  border-bottom: 1px solid #ddd;
+  background: #3d3d3d; /* Dark toolbar */
+  border-bottom: 1px solid #444;
+  color: #f0f0f0; /* Light text */
 }
 
 .slide-controls {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+  color: #f0f0f0; /* Light text */
 }
 
 .slide-selector {
@@ -62,41 +66,39 @@
 }
 
 .fixed-buttons .save-btn {
-  background-color: #007bff;
+  background-color: #4a90e2; /* Muted blue */
 }
 
 .fixed-buttons .save-btn:hover {
-  background-color: #0056b3;
+  background-color: #357ab7; /* Darker blue on hover */
 }
 
 .fixed-buttons .export-btn {
-  background-color: #28a745;
+  background-color: #50b984; /* Muted green */
 }
 
 .fixed-buttons .export-btn:hover {
-  background-color: #218838;
+  background-color: #3a895f; /* Darker green on hover */
 }
 
 .canvas-container {
   flex-grow: 1;
-  border: 1px solid #ddd;
-  background-color: #fff;
+  border: 1px solid #444; /* Darker border */
+  background-color: #292929; /* Dark canvas background */
   position: relative;
+  color: #f0f0f0; /* Light text */
 }
 
 .presentation-tools {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: #fff;
+  background: #3a3a3a; /* Dark tools background */
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 5px;
   z-index: 1000;
-}
-.editor-container {
-  display: flex;
-  height: 100vh;
+  color: #f0f0f0; /* Light text */
 }
 
 .main-area {
@@ -109,32 +111,32 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  background: #3d3d3d; /* Dark toolbar */
+  border-bottom: 1px solid #444;
+  color: #f0f0f0; /* Light text */
 }
 
-.slide-navigation {
+.slide-navigation, .slide-actions {
   display: flex;
   gap: 10px;
-}
-
-.slide-actions {
-  display: flex;
-  gap: 10px;
+  color: #f0f0f0; /* Light text */
 }
 
 button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  background-color: #4a4a4a; /* Dark buttons */
+  color: #fff; /* Light text */
   cursor: pointer;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #606060; /* Slightly lighter on hover */
+  opacity: 0.9;
 }
 
 canvas {
   flex-grow: 1;
-  background-color: #fff;
+  background-color: #292929; /* Darker background for canvas */
 }

@@ -12,26 +12,25 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-   
   background-size: cover;
 }
-.ppcover{
+
+.ppcover {
   background: url('./background.jpg') no-repeat center center fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
+
 .wrapper {
   width: 90%;
   max-width: 420px;
-  
-  background: rgba(255, 255, 255, 0.407); 
-  border: 1px solid rgba(153, 30, 30, 0.3); 
+  background: rgba(34, 34, 34, 0.9); 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
   backdrop-filter: blur(20px); 
-  color: #474545; 
+  color: #f1f1f1; 
   border-radius: 12px;
   padding: 30px 40px;
   margin: auto;
@@ -41,6 +40,7 @@ body {
 .wrapper h1 {
   font-size: 28px;
   text-align: center;
+  color: #f1f1f1;
 }
 
 .input-box {
@@ -53,16 +53,16 @@ body {
 .input-box input {
   width: 100%;
   height: 100%;
-  background: rgb(255, 255, 255);
+  background: rgba(50, 50, 50, 0.8); 
   border: 1px solid rgba(255, 255, 255, 0.4); 
   border-radius: 40px;
   font-size: 16px;
-  color: #333;
+  color: #f1f1f1;
   padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-  color: #b89b9b;
+  color: #bbb;
 }
 
 .input-box i {
@@ -71,6 +71,7 @@ body {
   top: 30%;
   transform: translate(-50%);
   font-size: 20px;
+  color: #00bfa5; /* Cyan color for icon */
 }
 
 .wrapper .remember-forgot {
@@ -78,15 +79,16 @@ body {
   justify-content: space-between;
   font-size: 14.5px;
   margin: -10px 0 10px;
+  color: #bbb;
 }
 
 .remember-forgot label input {
-  accent-color: #333;
+  accent-color: #f1f1f1;
   margin-right: 3px;
 }
 
 .remember-forgot a {
-  color: #333;
+  color: #00bfa5; /* Cyan color for links */
   text-decoration: none;
 }
 
@@ -97,24 +99,25 @@ body {
 .btn {
   width: 100%;
   height: 45px;
-  background: #512da8;
+  background: #00bfa5; /* Cyan color for the button */
   border: none;
   outline: none;
   border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   font-size: 16px;
-  color: #fff;
+  color: #f1f1f1;
 }
 
 .register-link {
   font-size: 14.5px;
   text-align: center;
   margin: 20px 0 15px;
+  color: #bbb;
 }
 
 .register-link p a {
-  color: #333;
+  color: #00bfa5; /* Cyan color for register link */
   text-decoration: none;
   font-weight: 600;
 }
@@ -123,6 +126,7 @@ body {
   text-decoration: underline;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .wrapper {
     padding: 20px;
@@ -190,6 +194,4 @@ body {
   .register-link p a {
     font-size: 12px;
   }
-
-  
 }
