@@ -1,4 +1,4 @@
-# Renewable-Revolutionaries_024
+![login](https://github.com/user-attachments/assets/b07db699-fe4c-49ed-a75e-f830fa33117b)# Renewable-Revolutionaries_024
 # Project Title
     Present-flow
 
@@ -80,21 +80,23 @@ Database: Firebase
 1. Open the application in your browser.
 
 
-![SignUp screenshoot] ![signup](https://github.com/user-attachments/assets/b836106d-58d1-4396-b2ff-fee7f7e5a087)
+![home](https://github.com/user-attachments/assets/c7426c9d-64e4-4d57-a557-3902445271bd)
 
 
-![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(133).png)
+![home2](https://github.com/user-attachments/assets/1e31e1b5-87ab-402e-ac37-9854f21b4681)
+
 
 3. Sign up for a new account or log in to an existing account to access your personalized workspace.
 
 
-![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(134).png)
-![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(135).png)
+![SignUp screenshoot](https://github.com/user-attachments/assets/b836106d-58d1-4396-b2ff-fee7f7e5a087)
+![login](https://github.com/user-attachments/assets/57bf969e-50be-4805-a9f2-bdb3e77da875)
+
 4. Use the control panel at the bottom to add and edit slides.
 
 
 5. Select preset templates to quickly design your slides.
-![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(136).png)
+
 
 
 6. Use the 'Next' and 'Previous' buttons to navigate through the slides.
@@ -106,7 +108,8 @@ Database: Firebase
 8. Save your presentations to your account for future access.
 
 
-![SignUp screenshoot](https://github.com/SyedFahadAli1/Hack-Hurdles_036/blob/main/screenshot/Screenshot%20(137).png)
+![pp](https://github.com/user-attachments/assets/cc8840a5-383e-47c2-82df-318d322718af)
+
 
 
 ## Technology Stack
@@ -115,6 +118,7 @@ Database: Firebase
 - **CSS**: For styling the application and implementing the dark theme.
 - **React**: For building the user interface and managing state.
 - **Draggable/Resizable**: For interactive element manipulation.
+- **Firebase**: For user based SignUp/Login Authentication
 
 
 
