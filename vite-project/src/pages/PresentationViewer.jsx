@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './PresentationViewer.css';
 
 const PresentationViewer = ({ slides, onClose }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -47,40 +46,31 @@ const PresentationViewer = ({ slides, onClose }) => {
   }, [slides, currentSlideIndex]);
 
   return (
-    <div className="presentation-viewer">
-      <div className="header">Presentation Header</div>
-      <button className="close-button" onClick={onClose}>X</button>
-      <div className="slide-container">
+    <div className="relative w-full h-screen flex flex-col bg-gray-100">
+      <div className="text-center p-3 bg-gray-800 text-white text-xl">Presentation Header</div>
+      <button
+        className="absolute top-4 right-6 text-white bg-red-600 px-4 py-2 rounded cursor-pointer"
+        onClick={onClose}
+      >
+        X
+      </button>
+      <div className="flex-grow flex justify-center items-center overflow-hidden">
         {slides.length > 0 && (
           <div
-            className="slide-content"
-            style={{
-              backgroundColor: slides[currentSlideIndex].backgroundColor,
-              position: 'relative',
-              width: '100%',
-              height: '100%',
-            }}
+            className="relative w-4/5 h-4/5 border-2 border-gray-800 flex justify-center items-center"
+            style={{ backgroundColor: slides[currentSlideIndex].backgroundColor }}
           >
             {slides[currentSlideIndex].elements.map((element) => {
               if (element.type === 'text') {
                 return (
                   <div
                     key={element.id}
-                    className="text-element"
+                    className={`absolute ${editingElementId === element.id ? 'border-2 border-black' : ''}`}
                     style={{
-                      position: 'absolute',
                       left: `${element.left}px`,
                       top: `${element.top}px`,
-                      fontSize: element.style.fontSize || '18px',
-                      fontFamily: element.style.fontFamily || 'Arial',
-                      color: element.style.color || '#000',
                       width: `${element.width}px`,
                       height: `${element.height}px`,
-                      whiteSpace: 'pre-wrap',
-                      border: editingElementId === element.id ? '2px dashed #000' : 'none',
-                      overflow: 'hidden',
-                      resize: 'both',
-                      wordWrap: 'break-word',
                     }}
                     onClick={() => handleClick(element.id)}
                   >
@@ -88,19 +78,24 @@ const PresentationViewer = ({ slides, onClose }) => {
                       <textarea
                         value={editText}
                         onChange={handleTextChange}
+                        className="w-full h-full bg-transparent text-inherit outline-none"
                         style={{
-                          width: '100%',
-                          height: '100%',
-                          border: 'none',
-                          outline: 'none',
-                          background: 'transparent',
-                          color: 'inherit',
-                          fontSize: 'inherit',
-                          fontFamily: 'inherit',
+                          fontSize: element.style.fontSize || '18px',
+                          fontFamily: element.style.fontFamily || 'Arial',
+                          color: element.style.color || '#000',
                         }}
                       />
                     ) : (
-                      element.text || 'Click to edit text'
+                      <span
+                        className="block w-full h-full"
+                        style={{
+                          fontSize: element.style.fontSize || '18px',
+                          fontFamily: element.style.fontFamily || 'Arial',
+                          color: element.style.color || '#000',
+                        }}
+                      >
+                        {element.text || 'Click to edit text'}
+                      </span>
                     )}
                   </div>
                 );
@@ -110,8 +105,8 @@ const PresentationViewer = ({ slides, onClose }) => {
                     key={element.id}
                     src={element.src}
                     alt="Slide Element"
+                    className="absolute"
                     style={{
-                      position: 'absolute',
                       left: `${element.left}px`,
                       top: `${element.top}px`,
                       width: `${element.width}px`,
@@ -126,8 +121,18 @@ const PresentationViewer = ({ slides, onClose }) => {
           </div>
         )}
       </div>
-      <button className="prev-slide" onClick={prevSlide}>Previous</button>
-      <button className="next-slide" onClick={nextSlide}>Next</button>
+      <button
+        className="absolute left-6 bottom-6 bg-gray-800 text-white px-4 py-2 rounded cursor-pointer"
+        onClick={prevSlide}
+      >
+        Previous
+      </button>
+      <button
+        className="absolute right-6 bottom-6 bg-gray-800 text-white px-4 py-2 rounded cursor-pointer"
+        onClick={nextSlide}
+      >
+        Next
+      </button>
     </div>
   );
 };

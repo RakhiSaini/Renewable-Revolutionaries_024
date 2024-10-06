@@ -15,7 +15,7 @@ const Slide = ({ elements, onDrop }) => {
   });
 
   return (
-    <div ref={drop} style={{ position: 'relative', width: '100%', height: '100%' }}>
+    <div ref={drop} className="relative w-full h-full">
       {elements.map((element) => (
         <DraggableElement key={element.id} id={element.id} left={element.left} top={element.top}>
           {element.content}

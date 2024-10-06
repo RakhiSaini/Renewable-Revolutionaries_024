@@ -3,7 +3,6 @@ import Sidebar from '../components/Sidebar';
 import Toolbar from '../components/Toolbar';
 import Canvas from '../components/Canvas';
 import Header from '../components/Header';
-import './EditorPage.css';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import PptxGenJS from 'pptxgenjs';
@@ -149,7 +148,7 @@ const EditorPage = () => {
   };
 
   return (
-    <div className="editor-container">
+    <div className="flex">
       <Sidebar
         addElement={addElement}
         setBackgroundColor={setBackgroundColor}
@@ -158,22 +157,36 @@ const EditorPage = () => {
         setFontColor={setFontColor}
         applyFilter={applyFilter}
       />
-      <div className="main-area">
+      <div className="flex-grow flex flex-col">
         <Header />
-        <div className="toolbar">
-          <button onClick={addSlide}>Add Slide</button>
-          <div className="slide-navigation">
+        <div className="flex items-center justify-between p-4 bg-gray-200 border-b">
+          <button 
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" 
+            onClick={addSlide}>
+            Add Slide
+          </button>
+          <div className="flex space-x-2">
             {slides.map((slide, index) => (
-              <button key={slide.id} onClick={() => changeSlide(index)}>
+              <button 
+                key={slide.id} 
+                className={`px-3 py-1 rounded ${currentSlideIndex === index ? 'bg-gray-300' : 'bg-white'}`}
+                onClick={() => changeSlide(index)}>
                 Slide {index + 1}
               </button>
             ))}
           </div>
-          <div className="slide-actions">
-            <button onClick={savePresentationAsPPT}>Save as PPT</button>
-            
-            <button onClick={()=>{navigate("/slideshow")}}>Show Slideshow</button>
-            {/* <button onClick={saveAllSlidesAsPDF}>Save All as PDF</button> */}
+          <div className="space-x-2">
+            <button 
+              className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+              onClick={savePresentationAsPPT}>
+              Save as PPT
+            </button>
+            <button 
+              className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
+              onClick={() => navigate("/slideshow")}>
+              Show Slideshow
+            </button>
+            {/* <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" onClick={saveAllSlidesAsPDF}>Save All as PDF</button> */}
           </div>
         </div>
         <Canvas

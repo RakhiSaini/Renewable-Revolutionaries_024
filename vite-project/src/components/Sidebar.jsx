@@ -98,96 +98,167 @@ const Sidebar = ({ addElement, setBackgroundColor, setFontStyle, setFontSize, se
   };
 
   return (
-    <div style={{ width: '250px', backgroundColor: '#f4f4f4', padding: '10px',display:'flex', flexDirection:'column', gap:'20px' }}>
-      <h3>Tools</h3>
-      <button onClick={() => addElement({ type: 'text', content: 'New Text', isHeader: false })}>Add Text</button>
-      
-      <button onClick={() => addElement({ type: 'text', content: 'Header', isHeader: true })}>Add Header</button>
-      
-      <button onClick={toggleShapesMenu}>
+    <div className="w-64 bg-gray-200 p-4 flex flex-col space-y-4">
+      <h3 className="text-lg font-semibold">Tools</h3>
+      <button 
+        onClick={() => addElement({ type: 'text', content: 'New Text', isHeader: false })} 
+        className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600"
+      >
+        Add Text
+      </button>
+
+      <button 
+        onClick={() => addElement({ type: 'text', content: 'Header', isHeader: true })} 
+        className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600"
+      >
+        Add Header
+      </button>
+
+      <button 
+        onClick={toggleShapesMenu} 
+        className="bg-gray-300 px-3 py-2 rounded hover:bg-gray-400"
+      >
         Shapes {isShapesMenuOpen ? '▲' : '▼'}
       </button>
-      
+
       {isShapesMenuOpen && (
-        <div style={{ marginTop: '10px' }}>
+        <div className="mt-2">
           {shapeTypes.map(({ name, shape }) => (
-            <div key={shape} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+            <div key={shape} className="flex items-center mb-2">
               <button
                 onClick={() => addElement({ type: 'shape', shape, color: shapeColor })}
-                style={{ width: '30px', height: '30px', backgroundColor: 'lightgray', border: 'none', cursor: 'pointer' }}
+                className="w-8 h-8 bg-gray-300 border-none rounded cursor-pointer"
               >
                 <svg width="30" height="30">
                   <use href={`#${shape}`} />
                 </svg>
               </button>
-              <br />
-              <span style={{ marginLeft: '10px' }}>{name}</span>
+              <span className="ml-2">{name}</span>
             </div>
           ))}
         </div>
       )}
 
-      <h4>Shape Color</h4>
-      <input type="color" value={shapeColor} onChange={(e) => setShapeColor(e.target.value)} style={{width:'150px', height:'50px', padding:'10px'}} />
+      <h4 className="text-md font-semibold">Shape Color</h4>
+      <input 
+        type="color" 
+        value={shapeColor} 
+        onChange={(e) => setShapeColor(e.target.value)} 
+        className="w-full h-10 border-none rounded"
+      />
 
-      <h4>Images & Videos</h4>
+      <h4 className="text-md font-semibold">Images & Videos</h4>
       <input
         type="file"
         accept="image/*"
         ref={imageInputRef}
-        style={{ display: 'none' }}
+        className="hidden"
         onChange={(e) => handleFileChange(e, 'image')}
       />
       <input
         type="file"
         accept="video/*"
         ref={videoInputRef}
-        style={{ display: 'none' }}
+        className="hidden"
         onChange={(e) => handleFileChange(e, 'video')}
       />
 
-      <button onClick={handleAddImage}>Add Image</button>
-      <button onClick={handleAddVideo}>Add Video</button>
+      <button 
+        onClick={handleAddImage} 
+        className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600"
+      >
+        Add Image
+      </button>
+      <button 
+        onClick={handleAddVideo} 
+        className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600"
+      >
+        Add Video
+      </button>
 
       {selectedImage && (
-        <div style={{ marginTop: '20px' }}>
-          <h5>Resize Image</h5>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center',gap:'10px' }}>
-            <button style={{}} onClick={() => handleResize('increase')}>Increase Size</button>
-            <button onClick={() => handleResize('decrease')}>Decrease Size</button>
+        <div className="mt-4">
+          <h5 className="font-semibold">Resize Image</h5>
+          <div className="flex justify-between items-center gap-2">
+            <button 
+              onClick={() => handleResize('increase')} 
+              className="bg-gray-300 px-3 py-2 rounded hover:bg-gray-400"
+            >
+              Increase Size
+            </button>
+            <button 
+              onClick={() => handleResize('decrease')} 
+              className="bg-gray-300 px-3 py-2 rounded hover:bg-gray-400"
+            >
+              Decrease Size
+            </button>
           </div>
         </div>
       )}
 
-      <h4>Background</h4>
-      <input type="color" onChange={(e) => setBackgroundColor(e.target.value)} style={{width:'150px', height:'50px', padding:'10px'}}/>
-      
-      <h4>Font Style</h4>
-      <select onChange={(e) => setFontStyle(e.target.value)}>
+      <h4 className="text-md font-semibold">Background</h4>
+      <input 
+        type="color" 
+        onChange={(e) => setBackgroundColor(e.target.value)} 
+        className="w-full h-10 border-none rounded"
+      />
+
+      <h4 className="text-md font-semibold">Font Style</h4>
+      <select 
+        onChange={(e) => setFontStyle(e.target.value)} 
+        className="w-full h-10 border border-gray-300 rounded"
+      >
         <option value="">Select Font Style</option>
         {fontOptions.map((font) => (
           <option key={font} value={font}>{font}</option>
         ))}
       </select>
 
-      <h4>Font Size</h4>
-      <input type="number" onChange={(e) => setFontSize(e.target.value)} placeholder="Enter font size" />
+      <h4 className="text-md font-semibold">Font Size</h4>
+      <input 
+        type="number" 
+        onChange={(e) => setFontSize(e.target.value)} 
+        placeholder="Enter font size" 
+        className="w-full h-10 border border-gray-300 rounded px-2"
+      />
 
-      <h4>Font Color</h4>
-      <input type="color" onChange={(e) => setFontColor(e.target.value)} />
+      <h4 className="text-md font-semibold">Font Color</h4>
+      <input 
+        type="color" 
+        onChange={(e) => setFontColor(e.target.value)} 
+        className="w-full h-10 border-none rounded"
+      />
 
-      <h4>Image Filters</h4>
-      <select onChange={(e) => applyFilter(e.target.value)}>
+      <h4 className="text-md font-semibold">Image Filters</h4>
+      <select 
+        onChange={(e) => applyFilter(e.target.value)} 
+        className="w-full h-10 border border-gray-300 rounded"
+      >
         <option value="">None</option>
         <option value="grayscale">Grayscale</option>
         <option value="sepia">Sepia</option>
         <option value="blur">Blur</option>
       </select>
 
-      <h4>Alignment</h4>
-      <button onClick={() => addElement({ type: 'alignment', align: 'left' })}>Align Left</button>
-      <button onClick={() => addElement({ type: 'alignment', align: 'center' })}>Align Center</button>
-      <button onClick={() => addElement({ type: 'alignment', align: 'right' })}>Align Right</button>
+      <h4 className="text-md font-semibold">Alignment</h4>
+      <button 
+        onClick={() => addElement({ type: 'alignment', align: 'left' })} 
+        className="bg-gray-300 px-3 py-2 rounded hover:bg-gray-400"
+      >
+        Align Left
+      </button>
+      <button 
+        onClick={() => addElement({ type: 'alignment', align: 'center' })} 
+        className="bg-gray-300 px-3 py-2 rounded hover:bg-gray-400"
+      >
+        Align Center
+      </button>
+      <button 
+        onClick={() => addElement({ type: 'alignment', align: 'right' })} 
+        className="bg-gray-300 px-3 py-2 rounded hover:bg-gray-400"
+      >
+        Align Right
+      </button>
     </div>
   );
 };

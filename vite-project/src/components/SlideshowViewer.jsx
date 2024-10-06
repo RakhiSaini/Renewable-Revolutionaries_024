@@ -12,13 +12,13 @@ const SlideshowViewer = ({ slides, onClose }) => {
   }, [slides.length]);
 
   return (
-    <div className="slideshow-viewer" style={styles.viewer}>
-      <div className="slide-content" style={{ ...styles.slide, backgroundColor: slides[currentSlideIndex].backgroundColor }}>
+    <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 flex justify-center items-center">
+      <div className="relative w-4/5 h-4/5 overflow-hidden" style={{ backgroundColor: slides[currentSlideIndex].backgroundColor }}>
         {slides[currentSlideIndex].elements.map((element) => (
           <div
             key={element.id}
+            className="absolute"
             style={{
-              position: 'absolute',
               left: element.left,
               top: element.top,
               width: element.width,
@@ -30,41 +30,15 @@ const SlideshowViewer = ({ slides, onClose }) => {
             }}
           >
             {element.type === 'text' && <div>{element.text}</div>}
-            {element.type === 'image' && <img src={element.src} alt="slide-element" style={{ width: '100%', height: '100%' }} />}
+            {element.type === 'image' && <img src={element.src} alt="slide-element" className="w-full h-full object-cover" />}
           </div>
         ))}
       </div>
-      <button onClick={onClose} style={styles.closeButton}>Close Slideshow</button>
+      <button onClick={onClose} className="absolute top-5 right-5 px-4 py-2 bg-gray-800 text-white font-semibold rounded cursor-pointer">
+        Close Slideshow
+      </button>
     </div>
   );
-};
-
-const styles = {
-  viewer: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide: {
-    position: 'relative',
-    width: '80%',
-    height: '80%',
-    overflow: 'hidden',
-  },
-  closeButton: {
-    position: 'absolute',
-    top: 20,
-    right: 20,
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
 };
 
 export default SlideshowViewer;

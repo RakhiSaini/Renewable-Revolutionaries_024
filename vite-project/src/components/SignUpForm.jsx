@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
-import { auth, db } from './firebase'; 
-import './SignUpForm.css';
+import { auth, db } from './firebase';
 
 const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,52 +30,54 @@ const SignUpForm = () => {
       setEmail('');
       setPassword('');
 
-      // Ensure the alert shows before navigation
       alert('Signup successful! Redirecting to login page...');
-      
-      // Navigate to the login page after the alert
       navigate('/login');
-      
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <>
-    <div className='ppcover'>
-       <div className="wrapper">
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="input-box">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-box">
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className="btn">Sign Up</button>
-        {error && <div className="custom-alert">{error}</div>}
-        {success && <div className="success">{success}</div>}
-        <div className="register-link">
-          <p>Already have an account? <a href="/login">Login here</a></p>
-        </div>
-      </form>
-    </div>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white shadow-md rounded-lg p-8 w-96">
+        <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <button 
+            type="submit" 
+            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Sign Up
+          </button>
+          {error && <div className="text-red-500 mt-4">{error}</div>}
+          {success && <div className="text-green-500 mt-4">{success}</div>}
+          <div className="mt-4 text-center">
+            <p>
+              Already have an account? <a href="/login" className="text-blue-500">Login here</a>
+            </p>
+          </div>
+        </form>
       </div>
-      </> 
-   
+    </div>
   );
 };
 

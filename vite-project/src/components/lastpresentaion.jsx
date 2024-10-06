@@ -1,10 +1,6 @@
-import "./lastshow.css"
-import { useNavigate } from 'react-router-dom'
-
-// src/components/Presentation.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Slide1, Slide2, Slide3 } from './lastslides';
-// import './Presentation.css';
+import { useNavigate } from 'react-router-dom';
 
 const slides = [<Slide1 key={1} />, <Slide2 key={2} />, <Slide3 key={3} />];
 
@@ -32,7 +28,7 @@ const nextIcon = (
     </svg>
 );
 
-function Presentation() {
+function Presentation({ autoPlayInterval = 2000 }) {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const intervalRef = useRef(null);
@@ -54,43 +50,52 @@ function Presentation() {
             intervalRef.current = null;
             setIsPlaying(false);
         } else {
-            intervalRef.current = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+            intervalRef.current = setInterval(nextSlide, autoPlayInterval);
             setIsPlaying(true);
         }
     };
 
     useEffect(() => {
         return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current);
-            }
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
+            if (intervalRef.current) clearInterval(intervalRef.current);
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
         };
     }, []);
 
     const handleMouseMove = () => {
         setShowControls(true);
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-        timeoutRef.current = setTimeout(() => {
-            setShowControls(false);
-        }, 3000); // Hide after 3 seconds of inactivity
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => setShowControls(false), 3000); // Hide controls after 3 seconds of inactivity
     };
 
     return (
-        <div className="presentation" onMouseMove={handleMouseMove}>
-            <div className="slide">
+        <div className="relative w-full h-screen bg-black text-white" onMouseMove={handleMouseMove} onKeyDown={(e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        }} tabIndex={0} aria-live="polite">
+            <div className="flex justify-center items-center h-full">
                 {slides[currentSlide]}
             </div>
-            <div className={`controls ${showControls ? 'show' : ''}`}>
-                <button onClick={previousSlide}>{prevIcon}</button>
-                <button onClick={togglePlayPause}>{isPlaying ? pauseIcon : playIcon}</button>
-                <button onClick={nextSlide}>{nextIcon}</button>
-            </div>
-            {showControls && <div className="close-button" onClick={()=>{navigate("/editor")}}>✖</div>}
+            {/* Controls */}
+            {showControls && (
+                <div className="absolute inset-x-0 bottom-8 flex justify-center space-x-4">
+                    <button onClick={previousSlide} className="p-2 bg-gray-700 rounded-full hover:bg-gray-600">
+                        {prevIcon}
+                    </button>
+                    <button onClick={togglePlayPause} className="p-2 bg-gray-700 rounded-full hover:bg-gray-600">
+                        {isPlaying ? pauseIcon : playIcon}
+                    </button>
+                    <button onClick={nextSlide} className="p-2 bg-gray-700 rounded-full hover:bg-gray-600">
+                        {nextIcon}
+                    </button>
+                </div>
+            )}
+            {/* Close Button */}
+            {showControls && (
+                <button className="absolute top-4 right-4 text-xl p-2 rounded-full bg-gray-700 hover:bg-gray-600" onClick={() => navigate('/editor')}>
+                    ✖
+                </button>
+            )}
         </div>
     );
 }
